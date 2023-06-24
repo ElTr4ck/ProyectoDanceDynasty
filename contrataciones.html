@@ -80,25 +80,25 @@
 
     <section id="formulario" class="formulario">
         <div class="container">
-            <form action="algo.php" method="POST" autocomplete="off" class="row justify-content-center" onsubmit="return validaDatos()">
+            <form action="algo.php" method="POST" autocomplete="off" class="row justify-content-center" id="formContratacion">
             <div class="row datosContacto align-items-start">
                 <div class="col-md-6">
                         <legend>Datos de Contacto:</legend>
                         <label for="Nombre">Nombre(s):</label>
-                        <input type="text" name="Nombre" placeholder="Ingrese su(s) nombre(s)" class="form-control" required>
+                        <input type="text" name="Nombre" placeholder="Ingrese su(s) nombre(s)" class="form-control" id="NombreUser" required>
                         <br>
                         <label for="ApellidoPaterno">Apellido Paterno:</label>
-                        <input type="text" name="ApellidoPaterno" placeholder="Ingrese su apellido paterno" class="form-control" required>
+                        <input type="text" name="ApellidoPaterno" placeholder="Ingrese su apellido paterno" class="form-control" id="ApellidoPaterno" required>
                         <br>
                         <label for="ApellidoMaterno">Apellido Materno:</label>
-                        <input type="text" name="ApellidoMaterno" placeholder="Ingrese su apellido materno" class="form-control">
+                        <input type="text" name="ApellidoMaterno" placeholder="Ingrese su apellido materno" class="form-control" id="ApellidoMaterno">
                         <br>
                         <label for="CURP">CURP:</label>
-                        <input type="text" name="CURP" placeholder="Ingrese su CURP" class="form-control" id="CURP" required>
+                        <input type="text" name="CURP" placeholder="Ingrese su CURP" class="form-control" id="CURP" oninput="validarMayusculas(this)" required>
                         <br>
                         <p>¿No conoces tu CURP? Consultala <a href="https://www.gob.mx/curp/">aquí</a></p>
                         <label for="emailUser">E-Mail:</label>
-                        <input type="email" name="emailUser" placeholder="Ingrese su email" class="form-control" required>
+                        <input type="email" name="emailUser" placeholder="Ingrese su email" class="form-control" id="email" required>
                         <br>
                         <label for="Telefono">Teléfono:</label>
                         <input type="tel" name="Telefono" placeholder="Ingrese su telefono" class="form-control" id="numeroCel" required>
@@ -107,19 +107,19 @@
                 <div class="col-md-6">
                         <legend>Dirección: </legend>
                         <label for="Calle">Calle: </label>
-                        <input type="text" name="Calle" placeholder="Ingrese su calle" class="form-control" required>
+                        <input type="text" name="Calle" placeholder="Ingrese su calle" class="form-control" id="calle" required>
                         <br>
                         <label for="CP">Código Postal: </label>
                         <input type="text" name="CP" placeholder="Ingrese su Código Postal" class="form-control" id="CP" required>
                         <br>
                         <label for="NumeroExt">Número Exterior: </label>
-                        <input type="text" name="NumeroExt" placeholder="Ingrese su numero exterior" class="form-control" required>
+                        <input type="text" name="NumeroExt" placeholder="Ingrese su numero exterior" class="form-control" id="NumeroExt" required>
                         <br>
                         <label for="NumeroInt">Número Interior: </label>
-                        <input type="text" name="NumeroInt" placeholder="Ingrese su numero interior" class="form-control" required>
+                        <input type="text" name="NumeroInt" placeholder="Ingrese su numero interior" class="form-control" id="NumeroInt" required>
                         <br>
                         <label for="Entidad">Entidad Federativa: </label>
-                        <select name="Entidad" class="form-control form-select" required>
+                        <select name="Entidad" class="form-control form-select" id="Entidad" required>
                             <option value="">--SELECCIONA UNA OPCION--</option>
                             <option value="Aguascalientes">Aguascalientes</option>
                             <option value="Baja California">Baja California</option>
@@ -156,10 +156,10 @@
                         </select>
                         <br>
                         <label for="municipio">Municipio/Alcaldía: </label>
-                        <input type="text" name="municipio" placeholder="Ingrese su municipio" class="form-control" required>
+                        <input type="text" name="municipio" placeholder="Ingrese su municipio" class="form-control" id="municipio" required>
                         <br>
                         <label for="colonia">Colonia: </label>
-                        <input type="text" name="colonia" placeholder="Ingrese su colonia" class="form-control" required>
+                        <input type="text" name="colonia" placeholder="Ingrese su colonia" class="form-control" id="colonia" required>
                 </div>
             </div>
             <div class="row datosContratacion">
@@ -167,7 +167,7 @@
                     <fieldset class="DatoContratacion">
                         <legend>Datos de Contratacion: </legend>
                         <label for="Salon">Salón a elegir: </label>
-                        <select name="Salon" id="" class="form-control form-select" required>
+                        <select name="Salon" class="form-control form-select" id="salon" required>
                             <option value="">--SELECCIONA UN VALOR--</option>
                             <option value="Salon A">Salón A</option>
                             <option value="Salon B">Salón B</option>
@@ -203,7 +203,7 @@
                         <div id="otroEvento" style="display: none;">
                             <br>
                             <label for="otro">Otro (Especificar):</label>
-                            <input type="text" name="otro" id="otro" placeholder="Especifique su evento" class="form-control" required>
+                            <input type="text" name="otro" id="otro" placeholder="Especifique su evento" class="form-control">
                         </div>
                         <br>
                         <label for="Menu">Menú: </label>
@@ -219,7 +219,7 @@
                                 <legend>Personaliza tu menú</legend>
                                 <br><br>
                                 <label for="entradas">Entrada: </label>
-                                <select name="entradas" id="entradaMenu" class="form-control form-select" required>
+                                <select name="entradas" id="entradaMenu" class="form-control form-select">
                                     <option value="">--SELECCIONA UNA OPCION--</option>
                                     <option value="BocadillosMole">Bocadillos de pollo con Mole</option>
                                     <option value="Bruschettas">Bruschettas de champiñones</option>
@@ -227,15 +227,15 @@
                                 </select>
                                 <br><br>
                                 <label for="platoFuerte">Plato Fuerte: </label>
-                                <select name="platoFuerte" id="fuerteMenu" class="form-control form-select" required>
+                                <select name="platoFuerte" id="fuerteMenu" class="form-control form-select">
                                     <option value="">--SELECCIONA UNA OPCION--</option>
                                     <option value="Pechugas">Pechugas de pollo a la Cordon Bleu</option>
                                     <option value="LomoCerdo">Lomo de cerdo en salsa BBQ</option>
                                     <option value="Pozole">Pozole o Menudo</option>
                                 </select>
                                 <br><br>
-                                <label for="postre">Plato Fuerte: </label>
-                                <select name="postre" id="postreMenu" class="form-control form-select" required>
+                                <label for="postre">Postre: </label>
+                                <select name="postre" id="postreMenu" class="form-control form-select">
                                     <option value="">--SELECCIONA UNA OPCION--</option>
                                     <option value="Churros">Churros con chocolate</option>
                                     <option value="Pastel">Pastel rayado de chocolate</option>
@@ -247,7 +247,7 @@
                 </div>
             </div>
             <div class="d-flex justify-content-center align-items-center enviarForm">
-                <input type="submit" value="Realizar mi contratación" class="botonEnvio">
+                <input type="submit" value="Realizar mi contratación" class="botonEnvio" id="submitButton">
             </div>
             </form>
             
@@ -291,6 +291,7 @@
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
