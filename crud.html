@@ -28,6 +28,7 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/crudStyle.css" rel="stylesheet">
 
 </head>
 
@@ -45,11 +46,11 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Crear registro</a></li>
-          <li><a class="nav-link scrollto" href="#about">Leer registro</a></li>
-          <li><a class="nav-link scrollto" href="#services">Actualizar registro</a></li>
-          <li><a class="nav-link scrollto " href="#portfolio">Eliminar registro</a></li>
-          <li><a class="nav-link scrollto" href="#pricing">Cerrar Sesión</a></li>
+          <li><a class="nav-link scrollto active" href="#" id="mostrarCrear">Crear registro</a></li>
+          <li><a class="nav-link scrollto" href="#" id="mostrarLeer">Leer registro</a></li>
+          <li><a class="nav-link scrollto" href="#" id="mostrarActualizar">Actualizar registro</a></li>
+          <li><a class="nav-link scrollto " href="#" id="mostrarEliminar">Eliminar registro</a></li>
+          <li><a class="nav-link scrollto" href="#">Cerrar Sesión</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -77,26 +78,26 @@
     <!-- ======= CRUD DE ADMINISTRADORES ======= -->
     <section id="crud">
       <!-- ======= SECCIÓN DE CREACION DE REGISTROS ======= -->
-      <div class="container seccionModificable" id="formulario">
-        <form action="algo.php" method="POST" autocomplete="off" class="row justify-content-center" onsubmit="return validaDatos()">
+    <div class="container seccionModificable" id="formulario">
+        <form action="algo.php" method="POST" autocomplete="off" class="row justify-content-center" id="formContratacion">
         <div class="row datosContacto align-items-start">
             <div class="col-md-6">
                     <legend>Datos de Contacto:</legend>
                     <label for="Nombre">Nombre(s):</label>
-                    <input type="text" name="Nombre" placeholder="Ingrese su(s) nombre(s)" class="form-control" required>
+                    <input type="text" name="Nombre" placeholder="Ingrese su(s) nombre(s)" class="form-control" id="NombreUser" required>
                     <br>
                     <label for="ApellidoPaterno">Apellido Paterno:</label>
-                    <input type="text" name="ApellidoPaterno" placeholder="Ingrese su apellido paterno" class="form-control" required>
+                    <input type="text" name="ApellidoPaterno" placeholder="Ingrese su apellido paterno" class="form-control" id="ApellidoPaterno" required>
                     <br>
                     <label for="ApellidoMaterno">Apellido Materno:</label>
-                    <input type="text" name="ApellidoMaterno" placeholder="Ingrese su apellido materno" class="form-control">
+                    <input type="text" name="ApellidoMaterno" placeholder="Ingrese su apellido materno" class="form-control" id="ApellidoMaterno">
                     <br>
                     <label for="CURP">CURP:</label>
-                    <input type="text" name="CURP" placeholder="Ingrese su CURP" class="form-control" id="CURP" required>
+                    <input type="text" name="CURP" placeholder="Ingrese su CURP" class="form-control" id="CURP" oninput="validarMayusculas(this)" required>
                     <br>
                     <p>¿No conoces tu CURP? Consultala <a href="https://www.gob.mx/curp/">aquí</a></p>
                     <label for="emailUser">E-Mail:</label>
-                    <input type="email" name="emailUser" placeholder="Ingrese su email" class="form-control" required>
+                    <input type="email" name="emailUser" placeholder="Ingrese su email" class="form-control" id="email" required>
                     <br>
                     <label for="Telefono">Teléfono:</label>
                     <input type="tel" name="Telefono" placeholder="Ingrese su telefono" class="form-control" id="numeroCel" required>
@@ -105,19 +106,19 @@
             <div class="col-md-6">
                     <legend>Dirección: </legend>
                     <label for="Calle">Calle: </label>
-                    <input type="text" name="Calle" placeholder="Ingrese su calle" class="form-control" required>
+                    <input type="text" name="Calle" placeholder="Ingrese su calle" class="form-control" id="calle" required>
                     <br>
                     <label for="CP">Código Postal: </label>
                     <input type="text" name="CP" placeholder="Ingrese su Código Postal" class="form-control" id="CP" required>
                     <br>
                     <label for="NumeroExt">Número Exterior: </label>
-                    <input type="text" name="NumeroExt" placeholder="Ingrese su numero exterior" class="form-control" required>
+                    <input type="text" name="NumeroExt" placeholder="Ingrese su numero exterior" class="form-control" id="NumeroExt" required>
                     <br>
                     <label for="NumeroInt">Número Interior: </label>
-                    <input type="text" name="NumeroInt" placeholder="Ingrese su numero interior" class="form-control" required>
+                    <input type="text" name="NumeroInt" placeholder="Ingrese su numero interior" class="form-control" id="NumeroInt" required>
                     <br>
                     <label for="Entidad">Entidad Federativa: </label>
-                    <select name="Entidad" class="form-control form-select" required>
+                    <select name="Entidad" class="form-control form-select" id="Entidad" required>
                         <option value="">--SELECCIONA UNA OPCION--</option>
                         <option value="Aguascalientes">Aguascalientes</option>
                         <option value="Baja California">Baja California</option>
@@ -154,10 +155,10 @@
                     </select>
                     <br>
                     <label for="municipio">Municipio/Alcaldía: </label>
-                    <input type="text" name="municipio" placeholder="Ingrese su municipio" class="form-control" required>
+                    <input type="text" name="municipio" placeholder="Ingrese su municipio" class="form-control" id="municipio" required>
                     <br>
                     <label for="colonia">Colonia: </label>
-                    <input type="text" name="colonia" placeholder="Ingrese su colonia" class="form-control" required>
+                    <input type="text" name="colonia" placeholder="Ingrese su colonia" class="form-control" id="colonia" required>
             </div>
         </div>
         <div class="row datosContratacion">
@@ -165,7 +166,7 @@
                 <fieldset class="DatoContratacion">
                     <legend>Datos de Contratacion: </legend>
                     <label for="Salon">Salón a elegir: </label>
-                    <select name="Salon" id="" class="form-control form-select" required>
+                    <select name="Salon" class="form-control form-select" id="salon" required>
                         <option value="">--SELECCIONA UN VALOR--</option>
                         <option value="Salon A">Salón A</option>
                         <option value="Salon B">Salón B</option>
@@ -201,7 +202,7 @@
                     <div id="otroEvento" style="display: none;">
                         <br>
                         <label for="otro">Otro (Especificar):</label>
-                        <input type="text" name="otro" id="otro" placeholder="Especifique su evento" class="form-control" required>
+                        <input type="text" name="otro" id="otro" placeholder="Especifique su evento" class="form-control">
                     </div>
                     <br>
                     <label for="Menu">Menú: </label>
@@ -217,7 +218,7 @@
                             <legend>Personaliza tu menú</legend>
                             <br><br>
                             <label for="entradas">Entrada: </label>
-                            <select name="entradas" id="entradaMenu" class="form-control form-select" required>
+                            <select name="entradas" id="entradaMenu" class="form-control form-select">
                                 <option value="">--SELECCIONA UNA OPCION--</option>
                                 <option value="BocadillosMole">Bocadillos de pollo con Mole</option>
                                 <option value="Bruschettas">Bruschettas de champiñones</option>
@@ -225,15 +226,15 @@
                             </select>
                             <br><br>
                             <label for="platoFuerte">Plato Fuerte: </label>
-                            <select name="platoFuerte" id="fuerteMenu" class="form-control form-select" required>
+                            <select name="platoFuerte" id="fuerteMenu" class="form-control form-select">
                                 <option value="">--SELECCIONA UNA OPCION--</option>
                                 <option value="Pechugas">Pechugas de pollo a la Cordon Bleu</option>
                                 <option value="LomoCerdo">Lomo de cerdo en salsa BBQ</option>
                                 <option value="Pozole">Pozole o Menudo</option>
                             </select>
                             <br><br>
-                            <label for="postre">Plato Fuerte: </label>
-                            <select name="postre" id="postreMenu" class="form-control form-select" required>
+                            <label for="postre">Postre: </label>
+                            <select name="postre" id="postreMenu" class="form-control form-select">
                                 <option value="">--SELECCIONA UNA OPCION--</option>
                                 <option value="Churros">Churros con chocolate</option>
                                 <option value="Pastel">Pastel rayado de chocolate</option>
@@ -245,19 +246,70 @@
             </div>
         </div>
         <div class="d-flex justify-content-center align-items-center enviarForm">
-            <input type="submit" value="Dar de alta el registro" class="botonEnvio">
+            <input type="submit" value="Realizar mi contratación" class="botonEnvio" id="submitButton">
+            <input type="reset" value="Limpiar Formulario" class="botonEnvio">
         </div>
         </form>
-      </div>
+        
+    </div>
 
       <!-- ======= SECCIÓN DE LECTURA DE REGISTROS ======= -->
-      <div class="container seccionModificable" id="lecturaRegistro">
+      <div class="container seccionModificable show" id="lecturaRegistro" style="display: none;">
         <div class="row">
-          
+          <form action="#">
+            <fieldset>
+              <legend>Búsqueda de registro: </legend>
+              <div class="form-check form-check-inline radioDiv">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="busquedaCURP" value="curp" checked>
+                <label class="form-check-label" for="busquedaCURP">Búsqueda por CURP: </label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="busquedaFecha" value="option2">
+                <label class="form-check-label" for="busquedaFecha">Búsqueda por Fecha:</label>
+              </div>
+              <!--Buscar por CURP-->
+              <div class="form-floating mb-3 busquedaDiv" id="busquedaPorCurp">
+                <input type="text" class="form-control" id="curpABuscar" placeholder="Ingrese el CURP">
+                <label for="curpABuscar">CURP registrado</label>
+              </div>
+              <!--Buscar por fecha-->
+              <div class="form-floating mb-3 busquedaDiv" id="busquedaPorFecha">
+                <input type="date" class="form-control" id="fechaABuscar" placeholder="Ingrese la fecha">
+                <label for="fechaABuscar">Fecha del evento registrada: </label>
+              </div>
+            </fieldset>
+          </form>
+          <!--AQUI SE DEBE DE MOSTRAR LA TABLA CON LOS REGISTROS OBTENIDOS DIRECTAMENTE DE LA BASE DE DATOS-->
         </div>
-
       </div>
 
+      <!-- ======= SECCIÓN DE MODIFICACIÓN DE REGISTROS ======= -->
+      <div class="container seccionModificable show" id="modificaRegistro" style="display: none;">
+        <!--Codigo-->
+      </div>
+
+      <!-- ======= SECCIÓN DE ELIMINACION DE REGISTROS ======= -->
+      <div class="container seccionModificable show" id="eliminaRegistro" style="display: none;">
+        <div class="row">
+          <form action="#">
+            <fieldset>
+              <legend>Eliminación de registro: </legend>
+              <!-- CURP del evento a eliminar-->
+              <div class="form-floating mb-3 busquedaDiv">
+                <input type="text" class="form-control" id="curpEliminarEvento" placeholder="Ingrese el CURP">
+                <label for="curpABuscar">CURP registrado del evento a eliminar</label>
+              </div>
+              <!--Buscar por fecha-->
+              <div class="form-floating mb-3 busquedaDiv">
+                <input type="date" class="form-control" id="fechaEliminarEvento" placeholder="Ingrese la fecha">
+                <label for="fechaABuscar">Fecha registrada del evento a eliminar: </label>
+              </div>
+            </fieldset>
+          </form>
+          <!--AQUI SE DEBE DE MOSTRAR UN MENSAJE DE CONFIRMACION O ERROR DEPENDIENDO DE SI SE PUDO BORRAR EL DATO DE LA BD O NO
+          PARA BUSCAR EL REGISTRO SUGIERO USAR EL CURP Y LA FECHA DEL EVENTO PARA NO ELIMINAR TODO ALV-->
+        </div>
+      </div>
     </section>
 
   </main><!-- End #main -->
@@ -275,7 +327,7 @@
         <!--<a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>-->
       </div>
       <div class="copyright">
-        &copy; Copyright <strong><span>Dance Dyansty</span></strong>. Todos los derechos reservados
+        &copy; Copyright <strong><span>Dance Dynasty</span></strong>. Todos los derechos reservados
       </div>
       <div class="credits">
         <!-- All the links in the footer should remain intact. -->
@@ -300,6 +352,7 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
   <script src="assets/js/registro.js"></script>
+  <script src="assets/js/crudCode.js"></script>
 
 </body>
 
