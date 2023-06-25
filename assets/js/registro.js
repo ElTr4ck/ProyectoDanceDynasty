@@ -47,6 +47,35 @@
     }
  }
 
+
+let campoSalon = document.getElementById("salon");
+
+function llenadoDeHorarios(){
+    let salonSeleccionado = campoSalon.value;
+    let campoHorario = document.getElementById("Horario");
+    
+    //Limpiar las opciones actuales del campo del horario
+    campoHorario.innerHTML = '';
+    // Definir las opciones personalizadas para el campo 2
+    let opcionesHorario = {
+        SalonA: ["Viernes [12:00-17:00]", "Viernes [19:00-00:00]", "Sábado [14:00-19:00]", "Sábado [21:00-02:00]"],
+        SalonB: ["Viernes [12:00-17:00]", "Viernes [19:00-00:00]", "Sábado [14:00-19:00]", "Sábado [21:00-02:00]"],
+        Jardin: ["Domingo [09:00-14:00]"]
+    };
+
+    if(salonSeleccionado in opcionesHorario){
+        let opcionesPersonalizadas = opcionesHorario[salonSeleccionado];
+        //Crear y agregar las opciones al campo de Horario de acuerdo al salón
+        opcionesPersonalizadas.forEach(function(opcion){
+            let opcioncita = document.createElement("option");
+            opcioncita.textContent = opcion;
+            campoHorario.appendChild(opcioncita);
+        });
+    }
+}
+campoSalon.addEventListener("change", llenadoDeHorarios);
+llenadoDeHorarios();
+
  function validaDatos(){
     let regexCURP = /^[A-Z]{4}\d{6}[HM]{1}[A-Z]{2}[B-DF-HJ-NP-TV-Z]{3}[A-Z0-9]{1}\d{1}$/;
     let regexCP = /^\d{5}$/;
