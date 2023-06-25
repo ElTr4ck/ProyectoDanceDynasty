@@ -2,8 +2,10 @@
 session_start();
 $usuario = $_SESSION['username'];
 if($usuario==null|| $usuario=''){
-  echo "Usted no tiene autorización";
-  die();
+  
+  header('Location: index.html');
+  echo '<link href="assets/css/loginStyle.css" rel="stylesheet">
+  <b class="error-acceso">Usted no tiene autorización<b>';
 }
 ?>
 <!DOCTYPE html>
@@ -58,7 +60,7 @@ if($usuario==null|| $usuario=''){
           <li><a class="nav-link scrollto" href="#" id="mostrarLeer">Leer registro</a></li>
           <li><a class="nav-link scrollto" href="#" id="mostrarActualizar">Actualizar registro</a></li>
           <li><a class="nav-link scrollto " href="#" id="mostrarEliminar">Eliminar registro</a></li>
-          <li><a class="nav-link scrollto" href="#">Cerrar Sesión</a></li>
+          <li><a class="nav-link scrollto" href="logica/salir.php">Cerrar Sesión</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->

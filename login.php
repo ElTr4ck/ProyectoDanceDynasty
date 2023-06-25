@@ -1,5 +1,5 @@
 <?php
-require 'conexion.php';
+require 'logica/conexion.php';
 session_start();
 
 $usuario = $_POST['userAdmin'];
@@ -11,8 +11,11 @@ $array = mysqli_fetch_array($consulta);
 
 if($array['contar']>0){
 $_SESSION['username']= $usuario;
-header("location: ../crud.php");
+header("location: crud.php");
 
 }else{
-echo "<h1>DATOS INCORRECTOS</h1>";}
+
+include ("adminLogin.php");
+echo '<link href="assets/css/loginStyle.css" rel="stylesheet">
+<b class="errorm">DATOS INCORRECTOS</b>';}
 ?>
