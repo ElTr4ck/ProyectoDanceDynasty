@@ -1,3 +1,11 @@
+<?php
+session_start();
+$usuario = $_SESSION['username'];
+if($usuario==null|| $usuario=''){
+  echo "Usted no tiene autorización";
+  die();
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 
