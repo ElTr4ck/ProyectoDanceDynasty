@@ -1,0 +1,22 @@
+/*--------------------------------------------------------------
+# Estilos adicionales solo usados en el CRUD
+--------------------------------------------------------------*/
+
+#lecturaRegistro {
+    transition: height 0.3s ease;
+}
+
+#lecturaRegistro .busquedaDiv{
+    margin-top: 30px;
+}
+
+#lecturaRegistro .radioDiv{
+    margin-top: 15px;
+}
+
+/*Estilos en la parte de la lectura*/
+.tablaRegistros{
+    margin-top: 30px;
+}
+
+/*Estilos para la parte de eliminar*/
