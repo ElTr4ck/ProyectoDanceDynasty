@@ -15,7 +15,9 @@ header("location: crud.php");
 
 }else{
 
-include ("adminLogin.php");
-echo '<link href="assets/css/loginStyle.css" rel="stylesheet">
-<b class="errorm">DATOS INCORRECTOS</b>';}
+    $_SESSION['accesoDenegado'] = true;
+    header("location: adminLogin.php");
+}
 ?>
+
+

@@ -1600,3 +1600,89 @@ section {
   background: #000000;
   color: #03fff6;
 }
+
+/*--------------------------------------------------------------
+# Formulario de confirmacion
+--------------------------------------------------------------*/
+
+#resume .enviarForm{
+  margin-top: 45px;
+} 
+
+#resume .datosContratacion{
+  padding: 2% 5% 5% 2%;
+  border: 2px solid #6a2c70;
+  margin-top: 30px;
+}
+
+#resume h2{
+  color: #6a2c70;
+}
+
+#resume .datosContacto{
+  margin-top: 25px;
+  padding: 2% 5% 5% 2%;
+  border: 2px solid #6a2c70;
+}
+
+
+#resume .botonEnvio{
+  font-family: "Raleway", sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 12px 30px;
+  border-radius: 50px;
+  transition: 0.5s;
+  margin: 10px;
+  color: #000000;
+  background: #03fff6;
+  border: 0px;
+}
+
+#resume .botonEnvio:hover{
+  background: #000000;
+  color: #03fff6;
+}
+
+#resume .botonInhabil{
+  font-family: "Raleway", sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 12px 30px;
+  border-radius: 50px;
+  transition: 0.5s;
+  margin: 10px;
+  color: #03fff6;
+  background: #787878;
+  border: 0px;
+}
+
+/*Estilos para el formulario de contrataciones*/
+
+
+#recuperarComprobante .botonEnvio{
+  font-family: "Raleway", sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 12px 30px;
+  border-radius: 50px;
+  transition: 0.5s;
+  margin: 10px;
+  color: #000000;
+  background: #03fff6;
+  border: 0px;
+}
+
+#recuperarComprobante .botonEnvio:hover{
+  background: #000000;
+  color: #03fff6;
+}

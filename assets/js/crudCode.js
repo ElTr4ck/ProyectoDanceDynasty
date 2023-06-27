@@ -98,3 +98,71 @@ botonMostrarEliminar.addEventListener('click', function(event) {
       botonMostrarEliminar.classList.add("active");
     }
 });
+
+function buscarPorFolio(){
+    let divCurp = document.getElementById("busquedaCURPDiv");
+    let divFolio = document.getElementById("busquedaPorFolio");
+
+    //Mostrar u ocultar los divs correspondientes
+    divCurp.style.display = "none";
+    divFolio.style.display = "block";
+}
+
+function buscarPorCURP(){
+  let divCurp = document.getElementById("busquedaCURPDiv");
+  let divFolio = document.getElementById("busquedaPorFolio");
+
+  //Mostrar u ocultar los divs correspondientes
+  divCurp.style.display = "block";
+  divFolio.style.display = "none";
+}
+
+document.getElementById('botonDeBusqueda').addEventListener('click', function() {
+  var metodoBusqueda = document.querySelector('input[name="metodoBusqueda"]:checked').value;
+  
+  // Obtener los datos del formulario según el método de búsqueda seleccionado
+  var formData = new FormData();
+  
+  if (metodoBusqueda === 'folio') {
+    var folioABuscar = document.getElementById('folio').value;
+    formData.append('metodoBusqueda', 'folio');
+    formData.append('folioABuscar', folioABuscar);
+  } else {
+    var curpABuscar = document.getElementById('curp').value;
+    var fechaABuscar = document.getElementById('fecha').value;
+    formData.append('metodoBusqueda', 'curp');
+    formData.append('curpABuscar', curpABuscar);
+    formData.append('fechaABuscar', fechaABuscar);
+  }
+  
+  // Realizar solicitud AJAX
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST', 'leerRegistro.php', true);
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState === 4 && xhr.status === 200) {
+      // Obtener los datos de respuesta en formato JSON
+      var datos = JSON.parse(xhr.responseText);
+      
+      // Construir la tabla HTML
+      var tablaHtml = '<table>';
+      tablaHtml += '<tr><th>Nombre</th><th>CURP</th><th>E-Mail</th><th>Salón</th><th>Fecha del evento</th><th>Horario</th></tr>';
+      
+      datos.forEach(function(fila) {
+        tablaHtml += '<tr>';
+        tablaHtml += '<td>' + fila.Nombre(s) + '</td>';
+        tablaHtml += '<td>' + fila.Curp + '</td>';
+        tablaHtml += '<td>' + fila.Email + '</td>';
+        tablaHtml += '<td>' + fila.Salon + '</td>';
+        tablaHtml += '<td>' + fila.FechaE + '</td>';
+        tablaHtml += '<td>' + fila.Curp + '</td>';
+        tablaHtml += '</tr>';
+      });
+      
+      tablaHtml += '</table>';
+      
+      // Mostrar la tabla en el contenedor correspondiente
+      document.getElementById('tablaRegistros').innerHTML = tablaHtml;
+    }
+  };
+  xhr.send(formData);
+});

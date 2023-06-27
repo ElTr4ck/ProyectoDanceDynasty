@@ -1,3 +1,7 @@
+<?php 
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -98,7 +102,7 @@
                 <br>
               </fieldset>
               <!--PARA EL QUE HAGA ESTO: Conecctar con JS para que cuando se ingresen credenciales incorrectas, muestre esta parte-->
-              <div style="display: none;">
+              <div style="display: none;" id="accesoDenegado">
                 <p class="accessDenied">El usuario o contraseña son incorrectos, favor de verificar sus datos</p>
               </div>
           </div>
@@ -149,6 +153,19 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/adminLogin.js"></script>
+  <!--Código para el mensaje de no acceso-->
+  <script>
+  window.onload = function() {
+    // Verificar si se estableció la variable de sesión 'accesoDenegado'
+    if (<?php echo isset($_SESSION['accesoDenegado']) ? 'true' : 'false'; ?>) {
+        mostrarAccesoDenegado();
+        
+        // Eliminar la variable de sesión 'accesoDenegado'
+        <?php unset($_SESSION['accesoDenegado']); ?>
+    }
+  };
+</script>
 
 </body>
 

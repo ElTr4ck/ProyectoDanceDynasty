@@ -28,6 +28,7 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/js/node_modules/sweetalert2/dist/sweetalert2.min.css">
 
 </head>
 
@@ -80,7 +81,7 @@
 
     <section id="formulario" class="formulario">
         <div class="container">
-            <form action="algo.php" method="POST" autocomplete="off" class="row justify-content-center" id="formContratacion">
+            <form action="confirmation.php" method="POST" autocomplete="off" class="row justify-content-center" id="formContratacion">
             <div class="row datosContacto align-items-start">
                 <div class="col-md-6">
                         <legend>Datos de Contacto:</legend>
@@ -222,25 +223,25 @@
                                 <label for="entradas">Entrada: </label>
                                 <select name="entradas" id="entradaMenu" class="form-control form-select">
                                     <option value="">--SELECCIONA UNA OPCION--</option>
-                                    <option value="BocadillosMole">Bocadillos de pollo con Mole</option>
-                                    <option value="Bruschettas">Bruschettas de champiñones</option>
-                                    <option value="Canelones">Canelones de salchicha y queso</option>
+                                    <option value="Bocadillos de mole">Bocadillos de pollo con Mole</option>
+                                    <option value="Bruschettas de champiñones">Bruschettas de champiñones</option>
+                                    <option value="Canelones de salchicha">Canelones de salchicha y queso</option>
                                 </select>
                                 <br><br>
                                 <label for="platoFuerte">Plato Fuerte: </label>
                                 <select name="platoFuerte" id="fuerteMenu" class="form-control form-select">
                                     <option value="">--SELECCIONA UNA OPCION--</option>
-                                    <option value="Pechugas">Pechugas de pollo a la Cordon Bleu</option>
-                                    <option value="LomoCerdo">Lomo de cerdo en salsa BBQ</option>
-                                    <option value="Pozole">Pozole o Menudo</option>
+                                    <option value="Pechugas de pollo Cordon Bleu">Pechugas de pollo a la Cordon Bleu</option>
+                                    <option value="Lomo de Cerdo en BBQ">Lomo de cerdo en salsa BBQ</option>
+                                    <option value="Pozole o Menudo">Pozole o Menudo</option>
                                 </select>
                                 <br><br>
                                 <label for="postre">Postre: </label>
                                 <select name="postre" id="postreMenu" class="form-control form-select">
                                     <option value="">--SELECCIONA UNA OPCION--</option>
-                                    <option value="Churros">Churros con chocolate</option>
-                                    <option value="Pastel">Pastel rayado de chocolate</option>
-                                    <option value="Duraznos">Duraznos en rompope</option>
+                                    <option value="Churros con chocolate">Churros con chocolate</option>
+                                    <option value="Pastel rayado de chocolate">Pastel rayado de chocolate</option>
+                                    <option value="Duraznos en rompope">Duraznos en rompope</option>
                                 </select>
                             </fieldset>
                         </div>
@@ -293,11 +294,11 @@
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
   <script src="assets/js/registro.js"></script>
+  <script src="assets/js/node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
 
 </body>
 
